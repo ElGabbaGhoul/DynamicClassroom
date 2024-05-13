@@ -1,0 +1,5 @@
+# ninja log v5
+6	71	7372732312419568	CMakeFiles/DynamicClassroom.dir/helper.cpp.obj	7684c2d8f4c31263
+10	85	7372732312559600	CMakeFiles/DynamicClassroom.dir/required.cpp.obj	ddf8f036fc258ee6
+1	427	7372732315998970	CMakeFiles/DynamicClassroom.dir/main.cpp.obj	162e9aa3d1b2f9e3
+430	557	7372732317279258	DynamicClassroom.exe	f81ecaaa662bb8c5

@@ -1,0 +1,8 @@
+//
+// Created by Scooter on 5/12/2024.
+//
+
+#ifndef DYNAMICCLASSROOM_HELPER_HPP
+#define DYNAMICCLASSROOM_HELPER_HPP
+
+#endif //DYNAMICCLASSROOM_HELPER_HPP
