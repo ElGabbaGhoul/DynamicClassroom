@@ -5,26 +5,15 @@
 #include "required.hpp"
 #include <iostream>
 
-Account::Account(){
-    this->number = 0;
-    this->balance = 0;
+int Object::count = 0;
+int Object::getCount() {
+    return count;
 }
-
-Account::Account(int number, float balance) {
-    this->number = number;
-    this->balance = balance;
+Object::Object() {
+    this->count++;
 }
-
-Account::~Account(){
-    std::cout << "Deleted " << this->number << std::endl;
-}
-
-float Account::getBalance() {
-    return this->balance;
-}
-
-void Account::deposit(float amount) {
-    this->balance += amount;
+Object::~Object(){
+    this->count--;
 }
 
 int getInteger(){

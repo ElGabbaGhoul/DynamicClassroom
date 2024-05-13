@@ -5,21 +5,13 @@
 #ifndef DYNAMICCLASSROOM_REQUIRED_HPP
 #define DYNAMICCLASSROOM_REQUIRED_HPP
 
-class Account {
+class Object{
 private:
-    int number;
-    float balance;
+    static int count;
 public:
-    // Constructors
-    Account();
-    Account(int, float);
-    // Destructor
-    ~Account();
-    // Public Methods
-    float getBalance();
-    void deposit(float);
-
-
+    static int getCount();
+    Object();
+    ~Object();
 };
 
 int getInteger();
