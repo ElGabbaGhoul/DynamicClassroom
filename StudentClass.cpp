@@ -3,3 +3,18 @@
 //
 
 #include "StudentClass.hpp"
+
+
+Student::Student(){
+    this->name = "";
+    this->GPA = 0;
+}
+
+Student::Student(std::string name, float GPA){
+    this->name = name;
+    this->GPA = GPA;
+}
+
+Student::~Student(){
+
+}

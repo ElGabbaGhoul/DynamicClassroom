@@ -21,18 +21,8 @@ public:
 
 };
 
-Student::Student(){
-    this->name = "";
-    this->GPA = 0;
-}
-
-Student::Student(std::string name, float GPA){
-    this->name = name;
-    this->GPA = GPA;
-}
-
-Student::~Student(){
-
-}
+Student::Student();
+Student::Student(std::string name, float GPA);
+Student::~Student();
 
 #endif //DYNAMICCLASSROOM_STUDENTCLASS_HPP

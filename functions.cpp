@@ -45,3 +45,10 @@ void displayStudents(){
 //    ◦ used to display array of students.
 //    ◦ no return values.
 }
+
+Student* createStudentArray(int arrSize){
+    Student* students = new Student[arrSize];
+
+    return students;
+
+}
