@@ -1,33 +1,18 @@
 #include <iostream>
+#include "required.hpp"
 
-class Coin {
-private:
-    std::string name;
-
-public:
-    void setName(std::string name){
-        this->name = name;
-    }
-    std::string getName(){
-        return this->name;
-    }
-
-    int value;
-};
 
 int main() {
 
-    Coin penny;
-    Coin *dime = new Coin;
+    Account acct1;
+    Account *acct2 = new Account;
+    Account *acct3 = new Account(1234,123.45);
 
-    penny.setName("Penny");
-    penny.value = 1;
+    delete acct2;
+    delete acct3;
 
-    dime->setName("Dime");
-    dime->value = 10;
 
-    std::cout << penny.getName() << " " << penny.value << std::endl;
-    std::cout << dime->getName() << " " << dime->value << std::endl;
+
 //    • Your main program should ask the user how many students in the section using getInteger.
 //    • Create a dynamic array of that many of Student class.
 //    • Call the readStudents function.

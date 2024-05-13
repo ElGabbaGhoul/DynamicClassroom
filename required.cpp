@@ -3,6 +3,29 @@
 //
 
 #include "required.hpp"
+#include <iostream>
+
+Account::Account(){
+    this->number = 0;
+    this->balance = 0;
+}
+
+Account::Account(int number, float balance) {
+    this->number = number;
+    this->balance = balance;
+}
+
+Account::~Account(){
+    std::cout << "Deleted " << this->number << std::endl;
+}
+
+float Account::getBalance() {
+    return this->balance;
+}
+
+void Account::deposit(float amount) {
+    this->balance += amount;
+}
 
 int getInteger(){
 //    ◦ used to get an input value
