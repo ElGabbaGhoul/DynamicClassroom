@@ -2,19 +2,10 @@
 // Created by Scooter on 5/12/2024.
 //
 
-#include "required.hpp"
+#include "functions.hpp"
 #include <iostream>
 
-int Object::count = 0;
-int Object::getCount() {
-    return count;
-}
-Object::Object() {
-    this->count++;
-}
-Object::~Object(){
-    this->count--;
-}
+
 
 int getInteger(){
 //    ◦ used to get an input value
