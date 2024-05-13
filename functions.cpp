@@ -5,13 +5,27 @@
 #include "functions.hpp"
 #include <iostream>
 
+int getInteger(int min, int max){
+    int numStds;
+    bool validInput = false;
 
-
-int getInteger(){
-//    ◦ used to get an input value
-//    ◦ input parameters are min and max value
-//    ◦ get and validates an integer between min and max
-//    ◦ return the value
+    while (!validInput){
+        std::cout << "Give me a number between " << min << " and " << max << "." << std::endl;
+        std::cin >> numStds;
+        if (std::cin.fail()){
+            // type check failure
+            std::cerr << "Invalid input type." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(50000, '\n');
+        } else if (numStds < min || numStds > max){
+            std::cerr << "Input out of bounds." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(50000, '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    return numStds;
 }
 
 void readStudents(){

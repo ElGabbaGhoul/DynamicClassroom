@@ -5,7 +5,7 @@
 #ifndef DYNAMICCLASSROOM_FUNCTIONS_HPP
 #define DYNAMICCLASSROOM_FUNCTIONS_HPP
 
-int getInteger();
+int getInteger(int min, int max);
 void readStudents();
 void displayStudents();
 

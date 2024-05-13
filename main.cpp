@@ -3,9 +3,9 @@
 
 
 int main() {
-
-
 //    • Your main program should ask the user how many students in the section using getInteger.
+int students = getInteger(1,20);
+std::cout << "Number of Students: " << students << "." << std::endl;
 //    • Create a dynamic array of that many of Student class.
 //    • Call the readStudents function.
 //    • Call displayStudents as entered.

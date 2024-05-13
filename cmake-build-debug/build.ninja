@@ -55,14 +55,14 @@ build CMakeFiles/DynamicClassroom.dir/main.cpp.obj: CXX_COMPILER__DynamicClassro
   OBJECT_DIR = CMakeFiles\DynamicClassroom.dir
   OBJECT_FILE_DIR = CMakeFiles\DynamicClassroom.dir
 
-build CMakeFiles/DynamicClassroom.dir/required.cpp.obj: CXX_COMPILER__DynamicClassroom_unscanned_Debug C$:/Users/Scooter/CLionProjects/DynamicClassroom/required.cpp || cmake_object_order_depends_target_DynamicClassroom
-  DEP_FILE = CMakeFiles\DynamicClassroom.dir\required.cpp.obj.d
+build CMakeFiles/DynamicClassroom.dir/functions.cpp.obj: CXX_COMPILER__DynamicClassroom_unscanned_Debug C$:/Users/Scooter/CLionProjects/DynamicClassroom/functions.cpp || cmake_object_order_depends_target_DynamicClassroom
+  DEP_FILE = CMakeFiles\DynamicClassroom.dir\functions.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DynamicClassroom.dir
   OBJECT_FILE_DIR = CMakeFiles\DynamicClassroom.dir
 
-build CMakeFiles/DynamicClassroom.dir/helper.cpp.obj: CXX_COMPILER__DynamicClassroom_unscanned_Debug C$:/Users/Scooter/CLionProjects/DynamicClassroom/helper.cpp || cmake_object_order_depends_target_DynamicClassroom
-  DEP_FILE = CMakeFiles\DynamicClassroom.dir\helper.cpp.obj.d
+build CMakeFiles/DynamicClassroom.dir/StudentClass.cpp.obj: CXX_COMPILER__DynamicClassroom_unscanned_Debug C$:/Users/Scooter/CLionProjects/DynamicClassroom/StudentClass.cpp || cmake_object_order_depends_target_DynamicClassroom
+  DEP_FILE = CMakeFiles\DynamicClassroom.dir\StudentClass.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DynamicClassroom.dir
   OBJECT_FILE_DIR = CMakeFiles\DynamicClassroom.dir
@@ -75,7 +75,7 @@ build CMakeFiles/DynamicClassroom.dir/helper.cpp.obj: CXX_COMPILER__DynamicClass
 #############################################
 # Link the executable DynamicClassroom.exe
 
-build DynamicClassroom.exe: CXX_EXECUTABLE_LINKER__DynamicClassroom_Debug CMakeFiles/DynamicClassroom.dir/main.cpp.obj CMakeFiles/DynamicClassroom.dir/required.cpp.obj CMakeFiles/DynamicClassroom.dir/helper.cpp.obj
+build DynamicClassroom.exe: CXX_EXECUTABLE_LINKER__DynamicClassroom_Debug CMakeFiles/DynamicClassroom.dir/main.cpp.obj CMakeFiles/DynamicClassroom.dir/functions.cpp.obj CMakeFiles/DynamicClassroom.dir/StudentClass.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DynamicClassroom.dir
