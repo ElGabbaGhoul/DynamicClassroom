@@ -9,7 +9,7 @@
 // Required functions
 int getInteger(int min, int max);
 void readStudents(Student *arr, int numStudents);
-void displayStudents();
+void displayStudents(Student *arr, int numStudents);
 
 // Helper functions
 //    • Create a dynamic array of that many of Student class.

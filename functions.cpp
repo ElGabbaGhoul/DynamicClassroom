@@ -35,42 +35,43 @@ int parsed = 0;
 
 std::string fileName;
 std::cout << "What is the name of the file?" << std::endl;
+std::cout << "(Hint: start with ../)" << std::endl;
+
 std::cin >> fileName;
 
 std::ifstream file(fileName);
-if (!file.is_open()){
-    std::cerr << "Error opening file: " << fileName << std::endl;
-    perror("Error");
-    return;
-}
-
-std::string line;
-
-while (std::getline(file, line) && parsed < numStudents){
-    std::string name;
-    float gpa;
-
-    std::istringstream iss(line);
-    iss >> name >> gpa;
-
-    arr[parsed] = Student(name, gpa);
-    parsed++;
-
-
-}
-
-//    ◦ No return.
 //    ◦ Error handling
     //    ▪ Handle if the file doesn’t contain enough names.
     //    ▪ Handle if the file contains too many names.
     //    ▪ Handle if the file doesn’t exist.
     //    ▪ Any other exceptions you can think of checking.
+    if (!file.is_open()){
+        std::cerr << "Error opening file: " << fileName << std::endl;
+        perror("Error");
+        return;
+    }
+
+    std::string line;
+
+    while (std::getline(file, line) && parsed < numStudents){
+        std::string name;
+        float gpa;
+
+        std::istringstream iss(line);
+        iss >> name >> gpa;
+
+        arr[parsed] = Student(name, gpa);
+        parsed++;
+
+
+    }
+file.close();
 }
 
-void displayStudents(){
-//    ◦ array should be passed safely and the number of students.
-//    ◦ used to display array of students.
-//    ◦ no return values.
+void displayStudents(Student *arr, int numStudents){
+    for (int i = 0; i < numStudents; i++){
+        std::cout << i + 1 << ": " << arr[i].getName() <<", GPA: " << arr[i].getGpa() << std::endl;
+    }
 }
 
 Student* createStudentArray(int arrSize){
