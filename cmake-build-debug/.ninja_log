@@ -1,14 +1,12 @@
 # ninja log v5
 6	71	7372732312419568	CMakeFiles/DynamicClassroom.dir/helper.cpp.obj	7684c2d8f4c31263
-360	453	7372745261449537	DynamicClassroom.exe	f81ecaaa662bb8c5
-8	356	7372745260509304	CMakeFiles/DynamicClassroom.dir/required.cpp.obj	ddf8f036fc258ee6
-3	360	7372745260559311	CMakeFiles/DynamicClassroom.dir/main.cpp.obj	162e9aa3d1b2f9e3
-2	166	7372760067688038	build.ninja	9e1c348c275c84ff
-10	427	7372760072709164	CMakeFiles/DynamicClassroom.dir/main.cpp.obj	162e9aa3d1b2f9e3
-6	435	7372760072789182	CMakeFiles/DynamicClassroom.dir/functions.cpp.obj	70fce3e5d1018fce
 3	442	7372760072859197	CMakeFiles/DynamicClassroom.dir/StudentClass.cpp.obj	ef9ccb0bfdbb6d90
-442	561	7372760074029464	DynamicClassroom.exe	7f4cf2325e941fa4
-3	343	7372760451594912	CMakeFiles/DynamicClassroom.dir/functions.cpp.obj	70fce3e5d1018fce
-343	433	7372760452465101	DynamicClassroom.exe	7f4cf2325e941fa4
-4	356	7372760892605482	CMakeFiles/DynamicClassroom.dir/functions.cpp.obj	70fce3e5d1018fce
 356	452	7372760893535677	DynamicClassroom.exe	7f4cf2325e941fa4
+8	356	7372745260509304	CMakeFiles/DynamicClassroom.dir/required.cpp.obj	ddf8f036fc258ee6
+10	427	7372760072709164	CMakeFiles/DynamicClassroom.dir/main.cpp.obj	162e9aa3d1b2f9e3
+2	166	7374208982413959	build.ninja	9e1c348c275c84ff
+4	356	7372760892605482	CMakeFiles/DynamicClassroom.dir/functions.cpp.obj	70fce3e5d1018fce
+12	514	7374220557442504	CMakeFiles/DynamicClassroom.dir/functions.cpp.obj	70fce3e5d1018fce
+17	515	7374220557432497	CMakeFiles/DynamicClassroom.dir/main.cpp.obj	162e9aa3d1b2f9e3
+3	517	7374220557462508	CMakeFiles/DynamicClassroom.dir/StudentClass.cpp.obj	ef9ccb0bfdbb6d90
+517	757	7374220559843036	DynamicClassroom.exe	7f4cf2325e941fa4

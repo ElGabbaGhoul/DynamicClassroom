@@ -10,19 +10,24 @@
 class Student {
 private:
     std::string name;
-    float GPA;
+    float gpa;
+
 public:
     // Constructors
     Student();
-    Student(std::string, float);
+    Student(const std::string&, float);
+
     // Deconstructor
     ~Student();
 
+    // Getters
+    std::string getName() const;
+    float getGpa();
+
+    // Setters
+    void setName(const std::string&);
+    void setGpa(float);
 
 };
-
-Student::Student();
-Student::Student(std::string name, float GPA);
-Student::~Student();
 
 #endif //DYNAMICCLASSROOM_STUDENTCLASS_HPP

@@ -3,18 +3,30 @@
 //
 
 #include "StudentClass.hpp"
+#include <iostream>
 
 
-Student::Student(){
-    this->name = "";
-    this->GPA = 0;
+// Constructors
+Student::Student() : name(""), gpa(0){}
+Student::Student(const std::string& name, float gpa) : name(name), gpa(gpa) {}
+
+// Deconstructor
+Student::~Student() {}
+
+// Getters
+std::string Student::getName() const {
+    return name;
 }
 
-Student::Student(std::string name, float GPA){
-    this->name = name;
-    this->GPA = GPA;
+float Student::getGpa() {
+    return gpa;
 }
 
-Student::~Student(){
+// Setters
+void Student::setName(const std::string & setName) {
+    this->name = setName;
+}
 
+void Student::setGpa(float setGpa){
+    this->gpa = setGpa;
 }
