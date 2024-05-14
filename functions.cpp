@@ -4,6 +4,8 @@
 
 #include "functions.hpp"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 int getInteger(int min, int max){
     int numStds;
@@ -28,10 +30,35 @@ int getInteger(int min, int max){
     return numStds;
 }
 
-void readStudents(){
-//    ◦ pass in student array and number of students
-//    ◦ Ask for file name.
-//    ◦ Open file, read in names and gpas and  each student.
+void readStudents(Student *arr, int numStudents){
+int parsed = 0;
+
+std::string fileName;
+std::cout << "What is the name of the file?" << std::endl;
+std::cin >> fileName;
+
+std::ifstream file(fileName);
+if (!file.is_open()){
+    std::cerr << "Error opening file: " << fileName << std::endl;
+    perror("Error");
+    return;
+}
+
+std::string line;
+
+while (std::getline(file, line) && parsed < numStudents){
+    std::string name;
+    float gpa;
+
+    std::istringstream iss(line);
+    iss >> name >> gpa;
+
+    arr[parsed] = Student(name, gpa);
+    parsed++;
+
+
+}
+
 //    ◦ No return.
 //    ◦ Error handling
     //    ▪ Handle if the file doesn’t contain enough names.

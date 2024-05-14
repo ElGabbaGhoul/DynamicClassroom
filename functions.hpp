@@ -8,7 +8,7 @@
 
 // Required functions
 int getInteger(int min, int max);
-void readStudents();
+void readStudents(Student *arr, int numStudents);
 void displayStudents();
 
 // Helper functions
