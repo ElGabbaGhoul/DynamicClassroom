@@ -40,11 +40,20 @@ std::cout << "(Hint: start with ../)" << std::endl;
 std::cin >> fileName;
 
 std::ifstream file(fileName);
+
 //    ◦ Error handling
     //    ▪ Handle if the file doesn’t contain enough names.
     //    ▪ Handle if the file contains too many names.
     //    ▪ Handle if the file doesn’t exist.
     //    ▪ Any other exceptions you can think of checking.
+
+    // Checks if file isempty
+    if (isFileEmpty(fileName) == true) {
+        std::cerr<< "isEmpty block reached" << std::endl;
+        perror("Error");
+    }
+
+    // Checks if file isn't open
     if (!file.is_open()){
         std::cerr << "Error opening file: " << fileName << std::endl;
         perror("Error");
@@ -62,8 +71,6 @@ std::ifstream file(fileName);
 
         arr[parsed] = Student(name, gpa);
         parsed++;
-
-
     }
 file.close();
 }
@@ -78,5 +85,11 @@ Student* createStudentArray(int arrSize){
     Student* students = new Student[arrSize];
 
     return students;
+
+}
+
+bool isFileEmpty(const std::string &filename) {
+    std::ifstream file(filename);
+    return file.peek() == std::ifstream::traits_type::eof();
 
 }

@@ -14,5 +14,6 @@ void displayStudents(Student *arr, int numStudents);
 // Helper functions
 //    • Create a dynamic array of that many of Student class.
 Student* createStudentArray(int arrSize);
+bool isFileEmpty(const std::string &file);
 
 #endif //DYNAMICCLASSROOM_FUNCTIONS_HPP
