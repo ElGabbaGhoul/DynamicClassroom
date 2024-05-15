@@ -5,7 +5,7 @@
 
 int main() {
 // Asks user how many students in the section
-int numStudents = getInteger(1,20);
+int numStudents = getInteger(1,39);
 std::cout << "Number of Students: " << numStudents << "." << std::endl;
 
 // Creates dynamic array of that many of Student class
@@ -20,6 +20,7 @@ displayStudents(stdArr, numStudents);
 //    • Use std::sort to sort the Students alphabetically by name.
 //    Since name is private, you will have to use the getName
 //    accessor method to accomplish this.
+
 //    • Call displayStudents to list then in alphabetical order.
     return 0;
 }

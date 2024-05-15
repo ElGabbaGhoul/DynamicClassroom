@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 int getInteger(int min, int max){
     int numStds;
@@ -49,14 +50,13 @@ std::ifstream file(fileName);
 
     // Checks if file isempty
     if (isFileEmpty(fileName) == true) {
-        std::cerr<< "isEmpty block reached" << std::endl;
-        perror("Error");
+        std::cerr<< "Error: file is empty." << std::endl;
+        return;
     }
 
     // Checks if file isn't open
     if (!file.is_open()){
         std::cerr << "Error opening file: " << fileName << std::endl;
-        perror("Error");
         return;
     }
 
@@ -76,7 +76,15 @@ file.close();
 }
 
 void displayStudents(Student *arr, int numStudents){
+    std::cout << "Sorted as entered: " << std::endl;
     for (int i = 0; i < numStudents; i++){
+        std::cout << i + 1 << ": " << arr[i].getName() <<", GPA: " << arr[i].getGpa() << std::endl;
+    }
+
+    // Sort by First name
+    std::cout << "Sorted by First Name:" << std::endl;
+    std::sort(&arr[0], &arr[numStudents], sortByFirst);
+    for (int i = 0; i < numStudents; i++) {
         std::cout << i + 1 << ": " << arr[i].getName() <<", GPA: " << arr[i].getGpa() << std::endl;
     }
 }
@@ -92,4 +100,8 @@ bool isFileEmpty(const std::string &filename) {
     std::ifstream file(filename);
     return file.peek() == std::ifstream::traits_type::eof();
 
+}
+
+bool sortByFirst(Student&a, Student&b) {
+    return a.getName() < b.getName();
 }

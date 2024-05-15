@@ -15,5 +15,6 @@ void displayStudents(Student *arr, int numStudents);
 //    • Create a dynamic array of that many of Student class.
 Student* createStudentArray(int arrSize);
 bool isFileEmpty(const std::string &file);
+bool sortByFirst(Student&a, Student&b);
 
 #endif //DYNAMICCLASSROOM_FUNCTIONS_HPP
