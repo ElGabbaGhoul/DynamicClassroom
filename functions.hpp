@@ -8,7 +8,7 @@
 
 // Required functions
 int getInteger(int min, int max);
-void readStudents(Student *arr, int numStudents);
+void readStudents(Student *&arr, int &numStudents);
 void displayStudents(Student *arr, int numStudents);
 
 // Helper functions
@@ -16,5 +16,7 @@ void displayStudents(Student *arr, int numStudents);
 Student* createStudentArray(int arrSize);
 bool isFileEmpty(const std::string &file);
 bool sortByFirst(Student&a, Student&b);
+int updateNumStudents(int& numStudents, std::ifstream& file);
+bool fileExists(const std::string &fileName);
 
 #endif //DYNAMICCLASSROOM_FUNCTIONS_HPP

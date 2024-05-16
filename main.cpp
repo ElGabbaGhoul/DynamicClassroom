@@ -4,9 +4,10 @@
 
 
 int main() {
-// Asks user how many students in the section
-int numStudents = getInteger(1,39);
-std::cout << "Number of Students: " << numStudents << "." << std::endl;
+// Asks user how many students to search for
+// arbitrary max val of 100 chosen.
+int numStudents = getInteger(1,100);
+std::cout << "Number of students to search for: " << numStudents << "." << std::endl;
 
 // Creates dynamic array of that many of Student class
 Student *stdArr = createStudentArray(numStudents);

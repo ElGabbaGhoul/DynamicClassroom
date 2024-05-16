@@ -31,9 +31,8 @@ int getInteger(int min, int max){
     return numStds;
 }
 
-void readStudents(Student *arr, int numStudents){
+void readStudents(Student *&arr, int &numStudents){
 int parsed = 0;
-
 std::string fileName;
 std::cout << "What is the name of the file?" << std::endl;
 std::cout << "(Hint: start with ../)" << std::endl;
@@ -42,36 +41,56 @@ std::cin >> fileName;
 
 std::ifstream file(fileName);
 
-//    ◦ Error handling
-    //    ▪ Handle if the file doesn’t contain enough names.
-    //    ▪ Handle if the file contains too many names.
-    //    ▪ Handle if the file doesn’t exist.
-    //    ▪ Any other exceptions you can think of checking.
-
-    // Checks if file isempty
-    if (isFileEmpty(fileName) == true) {
-        std::cerr<< "Error: file is empty." << std::endl;
-        return;
-    }
-
     // Checks if file isn't open
     if (!file.is_open()){
         std::cerr << "Error opening file: " << fileName << std::endl;
         return;
     }
 
+    // Checks if file isempty
+    if (isFileEmpty(fileName)) {
+        std::cerr << "Error: file with name '" << fileName << "' is empty." << std::endl;
+        file.close();
+        return;
+    }
+
+    // Checks if file not found
+    if (!fileExists(fileName)) {
+        std::cerr<< "Error: File '" << fileName << " not found or cannot be opened." << std::endl;
+        file.close();
+        return;
+    }
+
+    // Adjusts numstudents if necessary
+    if (int updatedNumStudents = updateNumStudents(numStudents, file); updatedNumStudents <= numStudents) {
+        std::cerr << "Adjusted numStudents to match the number of students in the file: " << updatedNumStudents << std::endl;
+        numStudents = updatedNumStudents;
+    }
+
     std::string line;
 
+    // reads student info into array
     while (std::getline(file, line) && parsed < numStudents){
-        std::string name;
-        float gpa;
-
-        std::istringstream iss(line);
-        iss >> name >> gpa;
-
-        arr[parsed] = Student(name, gpa);
-        parsed++;
+            std::string name;
+            float gpa;
+            std::istringstream iss(line);
+            if (iss >> name >> gpa) {
+                arr[parsed] = Student(name, gpa);
+                parsed++;
+            } else {
+                std::cerr << "Error parsing data in line " << (parsed + 1) << " of the file." << std::endl;
+            }
     }
+
+    if (!file.eof()) {
+        std::cerr << "Error: Unexpected end of file reached before reading all students." << std::endl;
+    }
+
+    if (parsed < numStudents) {
+        std::cerr << "There are less than " << numStudents << " students in this document." << std::endl;
+        std::cerr << parsed << " students were added to the array." << std::endl;
+        }
+
 file.close();
 }
 
@@ -80,7 +99,7 @@ void displayStudents(Student *arr, int numStudents){
     for (int i = 0; i < numStudents; i++){
         std::cout << i + 1 << ": " << arr[i].getName() <<", GPA: " << arr[i].getGpa() << std::endl;
     }
-
+    std::cout << "\n";
     // Sort by First name
     std::cout << "Sorted by First Name:" << std::endl;
     std::sort(&arr[0], &arr[numStudents], sortByFirst);
@@ -104,4 +123,29 @@ bool isFileEmpty(const std::string &filename) {
 
 bool sortByFirst(Student&a, Student&b) {
     return a.getName() < b.getName();
+}
+
+int updateNumStudents(int& numStudents, std::ifstream& file) {
+    int studentsInFile = 0;
+    std::string line;
+
+    while (std::getline(file, line)) {
+        ++studentsInFile;
+    }
+    if (studentsInFile < numStudents) {
+        std::cerr << "Student array size changed." << std::endl;
+        std::cerr << "Original numStudents value: " << numStudents << std::endl;
+        std::cerr << "Actual numStudents in file: " << studentsInFile << std::endl;
+    }
+
+
+    file.clear();
+    file.seekg(0, std::ios::beg);
+
+    return studentsInFile;
+}
+
+bool fileExists(const std::string &fileName) {
+    std::ifstream file(fileName);
+    return file.good();
 }
