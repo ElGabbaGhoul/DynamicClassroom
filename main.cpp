@@ -12,16 +12,10 @@ std::cout << "Number of students to search for: " << numStudents << "." << std::
 // Creates dynamic array of that many of Student class
 Student *stdArr = createStudentArray(numStudents);
 
-//    • Call the readStudents function.
+// Read students from document into student array
 readStudents(stdArr, numStudents);
 
-//    • Call displayStudents as entered.
+//    • Call displayStudents as entered, then list in alphabetical order
 displayStudents(stdArr, numStudents);
-
-//    • Use std::sort to sort the Students alphabetically by name.
-//    Since name is private, you will have to use the getName
-//    accessor method to accomplish this.
-
-//    • Call displayStudents to list then in alphabetical order.
     return 0;
 }

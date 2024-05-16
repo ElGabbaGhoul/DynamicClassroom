@@ -37,6 +37,7 @@ std::string fileName;
 std::cout << "What is the name of the file?" << std::endl;
 std::cout << "(Hint: start with ../)" << std::endl;
 
+    // enters file name with ../
 std::cin >> fileName;
 
 std::ifstream file(fileName);
@@ -95,12 +96,13 @@ file.close();
 }
 
 void displayStudents(Student *arr, int numStudents){
+    // displays file as entered
     std::cout << "Sorted as entered: " << std::endl;
     for (int i = 0; i < numStudents; i++){
         std::cout << i + 1 << ": " << arr[i].getName() <<", GPA: " << arr[i].getGpa() << std::endl;
     }
     std::cout << "\n";
-    // Sort by First name
+    // displays file sorted by First name
     std::cout << "Sorted by First Name:" << std::endl;
     std::sort(&arr[0], &arr[numStudents], sortByFirst);
     for (int i = 0; i < numStudents; i++) {
@@ -112,13 +114,11 @@ Student* createStudentArray(int arrSize){
     Student* students = new Student[arrSize];
 
     return students;
-
 }
 
 bool isFileEmpty(const std::string &filename) {
     std::ifstream file(filename);
     return file.peek() == std::ifstream::traits_type::eof();
-
 }
 
 bool sortByFirst(Student&a, Student&b) {
@@ -132,13 +132,16 @@ int updateNumStudents(int& numStudents, std::ifstream& file) {
     while (std::getline(file, line)) {
         ++studentsInFile;
     }
+
+    // only changes value if the list of students is less than the number of students
+    // if list is 13 but user wants list of 25, only gives 13
     if (studentsInFile < numStudents) {
         std::cerr << "Student array size changed." << std::endl;
         std::cerr << "Original numStudents value: " << numStudents << std::endl;
         std::cerr << "Actual numStudents in file: " << studentsInFile << std::endl;
     }
 
-
+    // resets back to start of file
     file.clear();
     file.seekg(0, std::ios::beg);
 
