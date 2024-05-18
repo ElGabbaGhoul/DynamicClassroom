@@ -1,3 +1,13 @@
+/*
+Lab 6
+Name: Scott "Marble" Nideffer
+Date: 05/16/2024
+IDE: Clion
+Version: 1.0
+Description: Creates a dynamic array of Class Student objects with float GPA
+ and string Name, sorting first by the order they were entered, then by first name.
+*/
+
 #include <iostream>
 #include "functions.hpp"
 #include "StudentClass.hpp"
